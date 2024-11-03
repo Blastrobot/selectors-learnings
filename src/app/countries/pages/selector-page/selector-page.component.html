@@ -17,13 +17,13 @@
         </div>
 
         <!-- Countries -->
-        <div class="field">
+        <div class="field" *ngIf="countriesByRegion.length > 0">
             <label class="label">Country</label>
             <div class="control">
               <div class="select">
                 <select formControlName="country">
                     <option value="" selected disabled>Choose a country</option>
-                    <!-- <option *ngFor="let region of regions" [value]="region">{{region}}</option> -->
+                    <option *ngFor="let country of countriesByRegion" [value]="country.cca3">{{ country.name }}</option>
                 </select>
               </div>
             </div>
