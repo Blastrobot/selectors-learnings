@@ -1,0 +1,39 @@
+<div class="section">
+    <h1 class="title">Nested selectors</h1>
+    <hr>
+    
+    <form class="container" [formGroup]="myForm">
+        <!-- Regions -->
+        <div class="field">
+            <label class="label">Region</label>
+            <div class="control">
+              <div class="select">
+                <select formControlName="region">
+                    <option value="" selected disabled>Choose a region</option>
+                    <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+                </select>
+              </div>
+            </div>
+        </div>
+
+        <!-- Countries -->
+        <div class="field">
+            <label class="label">Country</label>
+            <div class="control">
+              <div class="select">
+                <select formControlName="country">
+                    <option value="" selected disabled>Choose a country</option>
+                    <!-- <option *ngFor="let region of regions" [value]="region">{{region}}</option> -->
+                </select>
+              </div>
+            </div>
+        </div>
+          
+    </form>
+
+    <h2 class="subtitle mt-5 mb-0">Form</h2>
+    <code>
+        {{ myForm.value | json }}
+    </code>
+    <p>Is form valid?: {{ myForm.valid }}</p>
+</div>
